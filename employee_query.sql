@@ -50,3 +50,13 @@ CREATE TABLE dept_manager(
 	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
+
+-- 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
+SELECT employees.emp_no, employees.last_name, employees.first_name, employees.sex, salaries.salary
+FROM employees
+JOIN salaries ON employees.emp_no = salaries.emp_no;
+
+-- 2. List first name, last name, and hire date for employees who were hired in 1986.
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE hire_date LIKE '%1986';
